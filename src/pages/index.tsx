@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { SubscribeButton } from "../components/SubscribeButton";
 
 import styles from "./home.module.scss";
 
@@ -8,16 +9,19 @@ export default function Home() {
       <Head>
         <title>Home | ig.news</title>
       </Head>
-      
+
       <main className={styles.contentContainer}>
-        <section  className={styles.hero}>
+        <section className={styles.hero}>
           <span>👏</span>
           <span className={styles.span2}> Hey, welcome</span>
-          <h1>News about the <span>React</span> world.</h1>
+          <h1>
+            News about the <span>React</span> world.
+          </h1>
           <p>
             Get access to all the publication <br />
             <span>for $9.90 month</span>
           </p>
+          <SubscribeButton />
         </section>
 
         <img src="/images/avatar.svg" alt="Girl coding" />
