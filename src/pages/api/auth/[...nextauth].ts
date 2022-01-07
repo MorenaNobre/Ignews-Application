@@ -16,3 +16,9 @@ export default NextAuth({
     // ...add more providers here
   ],
 });
+
+//FaunaDB create-update-delete - HTTP
+
+/**
+ * PostgreSQL, MongoDB - criar uma nova conexão com o banco toda vez que uma função serverless for chamada para autenticação - isso será algo custoso para o Banco de Dados.
+*/
