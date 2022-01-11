@@ -19,20 +19,28 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
-  callbacks: {
-    async signIn({ user, account, profile }) {
-      const {email} = user;
-      console.log(user);
 
-      try {
-        await fauna.query(q.Create(q.Collection("users"), { data: { email } }));
-        return true;
-      } catch (err) {
-        console.log(err);
-        return false;
-      }
-    },
-  },
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      
+
+      return true
+    }},
+
+  // callbacks: {
+  //   async signIn({ user, account, profile }) {
+  //     const {email} = user;
+  //     console.log(user);
+
+  //     try {
+  //       await fauna.query(q.Create(q.Collection("users"), { data: { email } }));
+  //       return true;
+  //     } catch (err) {
+  //       console.log(err);
+  //       return false;
+  //     }
+  //   },
+  // },
 });
 
 //FaunaDB create-update-delete - HTTP
