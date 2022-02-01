@@ -39,15 +39,43 @@
       }
     }
 
+    &.previewContent {
+      background: linear-gradient(var(--gray-100), transparent);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     a {
       color: purple;
       text-decoration: underline;
     }
 
+    /*Abaixo é para colocar estilo em textos que trazem códigos explicativos*/
     pre {
       background: var(--gray-700);
       padding: 1rem;
       border-radius: 4px;
     }
   }
+}
+
+.continueReading {
+  padding: 2rem;
+  text-align: center;
+  background: var(--gray-850);
+  border-radius: 100px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 4rem 0 2rem;
+  
+  a {
+    color: var(--yellow-500);
+    margin-left: 0.5rem;
+    
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  
 }
