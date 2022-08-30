@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 import React from "react";
 
 export function SignInButton() {
-  const [session] = useSession();
+  const {data: session} = useSession();
 
   return session ? (
     <button
