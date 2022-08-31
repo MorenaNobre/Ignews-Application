@@ -3,7 +3,12 @@ import { mocked } from 'jest-mock';
 import Home, { getStaticProps } from '../../pages';
 import { stripe } from '../../services/stripe';
 
-jest.mock('next/router');
+// jest.mock('next/router');
+jest.mock('next/router', () => ({
+  useRouter: jest.fn().mockReturnValue({
+    push: jest.fn(),
+  }),
+}))
 jest.mock('next-auth/react', () => {
   return {
     useSession: () => [null, false]

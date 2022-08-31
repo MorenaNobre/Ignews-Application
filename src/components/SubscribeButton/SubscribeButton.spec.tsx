@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { mocked } from "jest-mock";
 import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
 import { SubscribeButton } from ".";
 
 jest.mock("next-auth/react");
@@ -54,12 +54,7 @@ describe("SubscribeButton component", () => {
       false,
     ] as any);
 
-    useRouterMocked.mockImplementationOnce(
-      () =>
-        ({
-          push: pushMocked,
-        } as any)
-    );
+    useRouterMocked.mockImplementationOnce(() => ({ push: pushMocked } as any));
 
     render(<SubscribeButton />);
 
