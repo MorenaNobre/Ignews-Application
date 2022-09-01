@@ -9,7 +9,7 @@ const posts = [
     slug: "my-new-post",
     title: "My new post",
     excerpt: "Post excerpt",
-    updatedAt: "19 de Novembro",
+    updatedAt: "04-01-2021",
   },
 ];
 
@@ -19,7 +19,7 @@ describe("Posts page", () => {
   it("renders correctly", () => {
     render(<Posts posts={posts} />);
 
-    expect(screen.getByText("My new Post")).toBeInTheDocument();
+    expect(screen.getByText("My new post")).toBeInTheDocument();
   });
 
   it("loads initial data", async () => {
@@ -29,7 +29,7 @@ describe("Posts page", () => {
       query: jest.fn().mockResolvedValueOnce({
         results: [
           {
-            uid: "my new post",
+            uid: "my-new-post",
             data: {
               title: [
                 { type: "heading", text: "My new post"}
@@ -38,7 +38,7 @@ describe("Posts page", () => {
                 { type: "paragraph", text: "Post excerpt"}
               ],
             },
-            last_publication_date: "08-30-2022",
+            last_publication_date: "04-01-2021",
           }
         ]
       })
@@ -53,7 +53,7 @@ describe("Posts page", () => {
             slug: "my-new-post",
             title: "My new post",
             excerpt: "Post excerpt",
-            updatedAt: "30 de agosto de 2022"
+            updatedAt: "01 de abril de 2021"
           }],
         },
       })
