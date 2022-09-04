@@ -14,7 +14,6 @@ export default NextAuth({
       authorization: {
         params: {
           scope: "read:user",
-          url: process.env.NEXTAUTH_URL,
         },
       },
     }),
