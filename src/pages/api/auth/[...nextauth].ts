@@ -14,12 +14,12 @@ export default NextAuth({
       authorization: {
         params: {
           scope: "read:user",
-          secret: process.env.NEXT_AUTH_SECRET,
         },
       },
     }),
     // ...add more providers here
   ],
+  secret: process.env.NEXT_PUBLIC_SECRET,
 
   callbacks: {
     async session({ session }) {
